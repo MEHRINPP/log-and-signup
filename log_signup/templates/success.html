@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Successful</title>
+<style>
+    body{
+    font-family:Arial,sans-serif;
+    background-color:#e0f7fa;
+    text-align: center;
+    margin: 0px;
+    padding: 20px;
+}
+.success-div{
+    background-color:  #ffffff;
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 20px auto;
+}
+button{
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:  #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover{
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+    <div class="success-div">
+    <h1>You have logged in successfully!</h1>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</div>
+</body>
+</html>
